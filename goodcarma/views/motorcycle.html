@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Motorcycle</title>
+    <include href="includes/header.htm"></include>
+</head>
+<body>
+<form id="motorcycle" method="post" action="#">
+    <div class="container border-0 mt-3">
+        <nav class="navbar navbar-dark bg-dark w-100 rounded">
+            <a class="navbar-brand" href="{{ @BASE }}">Home</a>
+            <div class="text-center">
+                <div>
+                    <h3 class="text-light">Good Car-Ma</h3>
+                </div>
+            </div>
+        </nav>
+        <br>
+        <h3>Motorcycle</h3>
+        <hr>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6"> <!-- start left column-->
+                    <h2>Design</h2>
+                    <hr>
+                    <div>
+                        <label for="mmake"><strong>Make</strong></label><br>
+                        <select class="form-control" id="mmake" name="mmake">
+                            <option value="none">Please select</option><br>
+                            <repeat group="{{ @allMakes }}" value="{{ @mmake}}">
+                                <option value="{{ @mmake }}"
+                                <check if="{{ @mmake == @selectedMMake }}" >
+                                    selected="selected"
+                                </check>
+                                >{{ ucfirst(@mmake) }}</option>><br>
+                            </repeat>
+                        </select>
+                        <span class="err">
+                        <check if="{{ isset(@errors['mmake']) }}">
+                            {{ @errors['mmake'] }}
+                        </check>
+                    </span>
+                    </div>
+
+                    <div>
+                        <label for="myear"><strong>Year</strong></label><br>
+                        <select class="form-control" id="myear" name="myear">
+                            <option value="none">Please select</option><br>
+                            <repeat group="{{ @allYears }}" value="{{ @myear}}">
+                                <option value="{{ @myear }}"
+                                <check if="{{ @myear == @selectedMYear }}" >
+                                    selected="selected"
+                                </check>
+                                >{{ ucfirst(@myear) }}</option>><br>
+                            </repeat>
+                        </select>
+                        <span class="err">
+                        <check if="{{ isset(@errors['myear']) }}">
+                            {{ @errors['myear'] }}
+                        </check>
+                    </span>
+                    </div>
+
+                    <div>
+                        <label for="mengine"><strong>Engine Size</strong></label>
+                        <select class="form-control" id="mengine" name="mengine">
+                            <option value="none">Please select</option><br>
+                            <repeat group="{{ @engine}}" value="{{ @mengin}}">
+                                <option value="{{ @mengin }}"
+                                <check if="{{ @mengin == @selectedMEngine }}" >
+                                    selected="selected"
+                                </check>
+                                >{{ ucfirst(@mengin) }}</option>><br>
+                            </repeat>
+                        </select>
+                        <span class="err">
+                                 <check if="{{ isset(@errors['mengine']) }}">
+                                     {{ @errors['mengine'] }}
+                                 </check>
+                            </span>
+                    </div>
+
+                    <div>
+                        <label class=" mt-2" for="mtransmission"><strong>Transmission</strong></label>
+                        <select class="form-control" id="mtransmission" name="mtransmission">
+                            <option value="none">Please select</option><br>
+                            <repeat group="{{ @transmission}}" value="{{ @mtrans}}">
+                                <option value="{{ @mtrans }}"
+                                <check if="{{ @mtrans == @selectedMTransmission }}" >
+                                    selected="selected"
+                                </check>
+                                >{{ ucfirst(@mtrans) }}</option>><br>
+                            </repeat>
+                        </select>
+                        <span class="err">
+                                 <check if="{{ isset(@errors['mtransmission']) }}">
+                                     {{ @errors['mtransmission'] }}
+                                 </check>
+                            </span>
+                    </div>
+                </div> <!--end of first column (left)-->
+
+                <div class="col-md-6"> <!-- start of right column-->
+                    <h2>Features</h2>
+                    <hr>
+                    <div>
+                        <label for="model"><strong>Model</strong></label><br>
+                        <select class="form-control" id="model" name="mmodel">
+                            <option value="none">Please select</option><br>
+                            <repeat group="{{ @allModels}}" value="{{ @mmodel}}">
+                                <option value="{{ @mmodel }}"
+                                <check if="{{ @mmodel == @selectedMModel }}" >
+                                    selected="selected"
+                                </check>
+                                >{{ ucfirst(@mmodel) }}</option>><br>
+                            </repeat>
+                        </select>
+                        <span class="err">
+                        <check if="{{ isset(@errors['mmodel']) }}">
+                            {{ @errors['mmodel'] }}
+                        </check>
+                    </span>
+                    </div>
+
+                    <div>
+                        <label for="mcolor"><strong>Color</strong></label><br>
+                        <select class="form-control" id="mcolor" name="mcolor">
+                            <option value="none">---</option><br>
+                            <repeat group="{{ @allColors }}" value="{{ @mcolor }}">
+                                <option value="{{ @mcolor }}"
+                                <check if="{{ @mcolor == @selectedMColor }}" >
+                                    selected="selected"
+                                </check>
+                                >{{ ucfirst(@mcolor) }}</option>><br>
+                            </repeat>
+                        </select>
+                        <span class="err">
+                        <check if="{{ isset(@errors['mcolor']) }}">
+                            {{ @errors['mcolor'] }}
+                        </check>
+                    </span>
+                    </div>
+
+                    <div>
+                        <label for="mseats"><strong>Number of Seats</strong></label>
+                        <select class="form-control" id="mseats" name="mseats">
+                            <option value="none">Please select</option><br>
+                            <repeat group="{{ @seats }}" value="{{ @mseat}}">
+                                <option value="{{ @mseat }}"
+                                <check if="{{ @mseat == @selectedMSeats }}" >
+                                    selected="selected"
+                                </check>
+                                >{{ ucfirst(@mseat) }}</option>><br>
+                            </repeat>
+                        </select>
+                        <span class="err">
+                                 <check if="{{ isset(@errors['mseats']) }}">
+                                     {{ @errors['mseats'] }}
+                                 </check>
+                            </span>
+                    </div>
+
+                    <div class="ml-2 mt-4 mb-2 text-right">
+                        <button type="submit" class="btn btn-primary" id="button">Submit ></button>
+                    </div>
+                </div><!-- end of right column-->
+                <br>
+
+            </div>
+        </div>
+        <include href="includes/footer.html"></include>
+    </div>
+</form>
+</body>
+</html>

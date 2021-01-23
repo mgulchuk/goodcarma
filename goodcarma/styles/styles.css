@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Abel&display=swap');
+body{
+
+    font-family: 'Noto Sans', sans-serif;
+    /*font-family: 'Abel', sans-serif;*/
+    background: lightgray;
+}
+
+.err {
+    color: darkred;
+}
+
+#car{
+    width: 100%;
+}
+
+#para{
+    font-size: 20px;
+}
+
+#button{
+    background-color: black;
+    border-color: black;
+    font-size: 25px;
+    border-radius: 12px;
+}
+
+h1{
+    font-size: 5em;
+    text-align: center;
+}
+
+h2{
+    font-size: 3em;
+    text-align: center;
+}
+
+h4{
+    font-size: 2em;
+    text-align: center;
+}
+
+hr{
+    border: 1px solid black;
+}

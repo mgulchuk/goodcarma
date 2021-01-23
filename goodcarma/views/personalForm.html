@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Personal Information</title>
+    <include href="includes/header.htm"></include>
+</head>
+<body>
+<form id="personal" method="post" action="#">
+    <div class="container border-0 mt-3">
+        <nav class="navbar navbar-dark bg-dark w-100 rounded">
+            <a class="navbar-brand" href="{{ @BASE }}">Home</a>
+            <div class="text-center">
+                <div>
+                    <h3 class="text-light">Good Car-Ma</h3>
+                </div>
+            </div>
+        </nav>
+        <br>
+        <h3>Personal Information</h3>
+        <hr>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="firstName"><strong>First Name</strong></label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" value="{{ @firstName }}">
+                    <span class="err">
+                        <check if="{{ isset(@errors['firstName']) }}">
+                            {{ @errors['firstName'] }}
+                        </check>
+                    </span>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="lastName"><strong>Last Name</strong></label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" value="{{ @lastName }}">
+                    <span class="err">
+                        <check if="{{ isset(@errors['lastName']) }}">
+                            {{ @errors['lastName'] }}
+                        </check>
+                    </span>
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="age"><strong>Age</strong></label>
+                    <input type="text" class="form-control" id="age" name="age" value="{{ @age }}" >
+                    <span class="err">
+                    <check if="{{ isset(@errors['age']) }}">
+                        {{ @errors['age'] }}
+                    </check>
+                </span>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="phone"><strong>Phone Number</strong></label>
+                    <input type="text" class="form-control" id="phone" name="phone" value="{{ @phone }}" >
+                    <span class="err">
+                        <check if="{{ isset(@errors['phone']) }}">
+                            {{ @errors['phone'] }}
+                        </check>
+                    </span>
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <label for="email"><strong>Email</strong></label>
+                    <input type="email" class="form-control" id="email" name="email" value="{{ @email}}">
+                    <span class="err">
+                        <check if="{{ isset(@errors['email']) }}">
+                            {{ @errors['email'] }}
+                        </check>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <br><label><strong>Type of Vehicle</strong></label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="car1" name="vehicle" value="car1"
+                    <check if="{{ @vehicle == 'car1' }}" >
+                        checked="checked"
+                    </check>>
+                    <label class="form-check-label" for="car1">Car</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="motorcycle" name="vehicle" value="motorcycle"
+                    <check if="{{ @vehicle == 'motorcycle' }}" >
+                        checked="checked"
+                    </check>>
+                    <label class="form-check-label" for="motorcycle">Motorcycle</label>
+                </div>
+                <span class="err">
+                        <check if="{{ isset(@errors['vehicle']) }}">
+                            <br>
+                            {{ @errors['vehicle'] }}
+                        </check>
+                    </span>
+            </div>
+        </div>
+        <br>
+
+        <div class="form-row">
+            <div class="form-group text-right col-md-12">
+                <button type="submit" class="btn btn-primary" id="button">Next ></button>
+            </div>
+        </div>
+        <include href="includes/footer.html"></include>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Good Car-Ma</title>
+    <include href="includes/header.htm"></include>
+</head>
+<body>
+<form action="personal">
+    <div class="container border-0 mt-3">
+        <nav class="navbar navbar-dark bg-dark w-100 rounded">
+            <div class="text-center">
+                <div>
+                    <a class="text-light display-4" href="{{ @BASE }}">Good Car-Ma</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="row mt-3">
+            <div id="para" class="form-group col-4">
+            <p>Welcome to Good Car-Ma! Looking for a way to advertise your car?
+            You have come to the right place. Here at Good-Car-Ma you can build your dream car or
+            create a car you already own. Forty years of helping customers like you, find their way to their dream
+            car. There is a car for everyone. Let us help you find yours today!</p>
+            <br>
+            <br>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary" id="button">Get Started</button>
+            </div>
+            </div>
+            <div class="form-group col-8">
+                <img class="rounded" src="images/cars.jpg" alt="cars" id="car">
+            </div>
+        </div>
+
+        <div class="container text-center text-md-left border-top border-dark mt-5" >
+            <h2 class="text-center mt-3">Cars and Motorcycles</h2>
+            <div class="row text-center text-md-left mt-3 pb-3">
+                {{ @database->view() }}
+            </div>
+        </div>
+
+        <include href="includes/footer.html"></include>
+    </div>
+</form>
+</body>
+</html>
